@@ -25,8 +25,15 @@ namespace StockTradeApp
         /// </summary>
         public decimal Balance { get; private set; }
         
-        public DateTime dateTime { get; private set; }
+        public DateTime CreatedDate { get; private set; }
 
+        #endregion
+        #region Method
+        public decimal TransferTo(decimal amount)
+        {
+            Balance += amount;
+            return Balance;
+        }
         #endregion
 
     }
