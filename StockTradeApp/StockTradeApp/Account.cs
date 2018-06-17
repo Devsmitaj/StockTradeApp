@@ -11,6 +11,7 @@ namespace StockTradeApp
     /// </summary>
     class Account
     {
+        private static int lastAccountNumber = 0;
         #region
         /// <summary>
         /// Unique account number 
@@ -28,6 +29,10 @@ namespace StockTradeApp
         public DateTime CreatedDate { get; private set; }
 
         #endregion
+        public Account()
+        {
+            AccountNumber=++lastAccountNumber;
+        }
         #region Method
         public decimal TransferTo(decimal amount)
         {
