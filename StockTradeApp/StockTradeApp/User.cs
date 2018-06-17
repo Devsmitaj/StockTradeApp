@@ -10,11 +10,11 @@ namespace StockTradeApp
 /// </summary>
     class User
     {
-        #region
+        #region Properties
         /// <summary>
         /// Login and Password information
         /// </summary>
-        public string Login { get; set; }
+        public string UserId { get; set; }
 
         public string Password { get; set; }
         /// <summary>
@@ -26,6 +26,20 @@ namespace StockTradeApp
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Address { get; set; }
+        #endregion
+
+        
+        #region Method
+        public bool Register(string UserId, string Password, string FName, string MName, string LName, DateTime DOB, string Addr)
+        {
+            bool registered = true;
+            FirstName = FName;
+            MiddleName = MName;
+            LastName = LName;
+            DateOfBirth = DOB;
+            Address = Addr;
+            return registered;
+        }
         #endregion
     }
 }

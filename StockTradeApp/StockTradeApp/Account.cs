@@ -34,6 +34,11 @@ namespace StockTradeApp
             AccountNumber=++lastAccountNumber;
         }
         #region Method
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="amount"></param>
+        /// <returns></returns>
         public decimal TransferTo(decimal amount)
         {
             Balance += amount;
