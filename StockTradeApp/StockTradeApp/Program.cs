@@ -10,6 +10,11 @@ namespace StockTradeApp
     {
         static void Main(string[] args)
         {
+            var account = StockTrade.CreateAccount("test1@test.co");
+            Console.WriteLine($"Account Number:{ account.AccountNumber},"+
+                $"Balance:{account.Balance},"+
+                $"Email address: {account.EmailAddress},"+
+                $"Create Date:{account.CreatedDate}");
         }
     }
 }

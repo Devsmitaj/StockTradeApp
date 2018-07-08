@@ -32,7 +32,14 @@ namespace StockTradeApp
         public Account()
         {
             AccountNumber=++lastAccountNumber;
+            CreatedDate = DateTime.Now;
         }
+        public Account(string emailAddress) :this()
+        {
+            EmailAddress = emailAddress;
+        }
+       
+
         #region Method
         /// <summary>
         /// 
