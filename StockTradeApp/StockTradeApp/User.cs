@@ -26,13 +26,16 @@ namespace StockTradeApp
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Address { get; set; }
-        #endregion
+        public string EmailAddress { get; set; }
+       #endregion
 
-        
+
         #region Method
-        public bool Register(string UserId, string Password, string FName, string MName, string LName, DateTime DOB, string Addr)
+        public bool Register(string Id, string Pswd, string FName, string MName, string LName, DateTime DOB, string Addr)
         {
             bool registered = true;
+            UserId = Id;
+            Password = Pswd;
             FirstName = FName;
             MiddleName = MName;
             LastName = LName;
@@ -40,6 +43,16 @@ namespace StockTradeApp
             Address = Addr;
             return registered;
         }
+        public bool Update(string Password, string FName, string MName, string LName, DateTime DOB, string Addr)
+        {
+            bool updated = true;
+            FirstName = FName;
+            MiddleName = MName;
+            LastName = LName;
+            DateOfBirth = DOB;
+            Address = Addr;
+            return updated;
+        }
         #endregion
-    }
+        }
 }

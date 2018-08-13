@@ -8,15 +8,17 @@ namespace StockTradeApp
 {
     static class StockTrade
     {
-        public static Account CreateAccount(string EmailAddress, decimal InitialAmount=0.0M)
+        public static Account CreateAccount(User AccountUser, decimal InitialAmount=0.0M)
         {
-            var account = new Account
-            {
-                EmailAddress = "test1@test.co"
-            };
+            var account = new Account(AccountUser);
+           // {
+          //      EmailAddress = "test1@test.co"
+          //  };
+
+
             if (InitialAmount > 0)
             {
-                account.TransferTo(InitialAmount);
+                account.Deposit(InitialAmount);
             }
             return account;
         }

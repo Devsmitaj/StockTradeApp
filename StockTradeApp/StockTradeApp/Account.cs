@@ -12,6 +12,8 @@ namespace StockTradeApp
     class Account
     {
         private static int lastAccountNumber = 0;
+        User AccountUser;
+
         #region
         /// <summary>
         /// Unique account number 
@@ -29,15 +31,16 @@ namespace StockTradeApp
         public DateTime CreatedDate { get; private set; }
 
         #endregion
-        public Account()
+        public Account(User AccUser)
         {
             AccountNumber=++lastAccountNumber;
             CreatedDate = DateTime.Now;
+            AccountUser = AccUser;
         }
-        public Account(string emailAddress) :this()
-        {
-            EmailAddress = emailAddress;
-        }
+    //    public Account(string emailAddress) :this()
+    //    {
+    //        EmailAddress = emailAddress;
+    //    }
        
 
         #region Method
@@ -46,7 +49,7 @@ namespace StockTradeApp
         /// </summary>
         /// <param name="amount"></param>
         /// <returns></returns>
-        public decimal TransferTo(decimal amount)
+        public decimal Deposit(decimal amount)
         {
             Balance += amount;
             return Balance;
